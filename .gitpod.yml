@@ -1,5 +1,5 @@
 tasks:
-  - init: npm install
+  - init: cd myapp && npm install
     command: npm run start
 image:
   file: .gitpod.Dockerfile
