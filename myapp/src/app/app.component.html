@@ -39,7 +39,7 @@
     margin: -8px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: #3A66A7;
     color: white;
     font-weight: 600;
   }
@@ -293,16 +293,56 @@
       visibility: hidden;
     }
   }
+
+  /* maverick styling */
+
+  .navWelcomeMAV{
+    font-family: 'Qwigley', cursive;
+    font-size: 30px;
+    float: left;
+  }
+
+  ul {
+  list-style-type: none;
+  margin-left: 500;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3A66A7;
+  font-family: 'Bellota Text', cursive;
+    font-size: 15px;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #000000;
+}
 </style>
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
+  title="Cayenne"
     width="40"
     alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   />
-  <span>Welcome</span>
+  <p class="navWelcomeMAV">Welcome to Cayenne Solutions</p>
+  <ul style="margin-left: 600px">
+    <li ><a href="#about">ABOUT US</a></li>
+    <li><a href="#canvas">CANVAS</a></li>
+    <li><a href="#home">HOME</a></li>
+  </ul>
     <div class="spacer"></div>
     <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
       <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
