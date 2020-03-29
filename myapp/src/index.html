@@ -20,6 +20,7 @@
 <script src="https://unpkg.com/@hpcc-js/wasm@0.3.6/dist/index.min.js"></script>
 <script src="https://unpkg.com/d3-graphviz@3.0.0/build/d3-graphviz.js"></script>
 <script src="regparser-browser.js"></script>
+<script src="require.js"></script>
 
 <body style="background-image: url('../assets/white.jpg'); background-size: 1000px 1000px;">
 
@@ -61,6 +62,42 @@
 
 </div>
   <script>
+
+    function drawInputDefault(){
+
+      var colors = [ "lightskyblue", "powderblue", "lightsteelblue"];
+
+      var DFA = 'digraph finite_state_machine{rankdir=LR;node[shape=circle];0;node[shape=doublecircle];2;node[shape=plaintext];""->0[label="starting"' + ' color=' + colors[0] +'];node[shape=circle];0->1[label="1"' + ' color=' + colors[1] +'];1->2[label="0"'  + ' color=' + colors[2] + '];}';
+
+        //##########################TIMER
+        var t = d3.transition()
+            .duration(2000)
+            .ease(d3.easeLinear);
+
+        d3.select("#diagraph").graphviz()
+            .transition(t)
+            .attributer(function(d) {
+                //##########################ALL NODE COLOR
+                if (d.tag == "ellipse") {
+                    d3.select(this)
+                        .attr("fill", "white");
+                    d.attributes.fill = "white";
+                }
+                //##########################ALL ARROW HEAD COLOUR
+                if (d.tag == "polygon") {
+                    d3.select(this)
+                        .attr("fill", "black");
+                    d.attributes.stroke = "black";
+                }
+                //##########################BACKROUNG FILL COLOR WHITE
+                if (d.tag == "polygon") {
+                    d.attributes.fill = "lightsteelblue";
+                }
+            })
+            .renderDot('digraph finite_state_machine{rankdir=LR;node[shape=circle];0;node[shape=doublecircle color="black"];2;node[shape=plaintext];""->0[label="start"];node[shape=circle];0->2[label="ε"];0->6[label="ε"];4->5[label="1"];5->2[label="ε"];5->6[label="ε"];6->7[label="1"];7->4[label="0"];}');
+
+    }
+
   function drawInput (){
         var regexInput = document.getElementById('regex');
 
